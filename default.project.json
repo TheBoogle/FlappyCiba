@@ -1,0 +1,62 @@
+{
+	"name": "FlappyCiba",
+	"tree": {
+		"$className": "DataModel",
+
+		"ReplicatedStorage": {
+			"$className": "ReplicatedStorage",
+			"Assets": {
+				"$className": "Folder",
+				"$path": "bin"
+			},
+			"Modules": {
+				"$className": "Folder",
+				"$path": "src/Modules"
+			}
+		},
+
+		"Players": {
+			"$className": "Players",
+			"$properties": {
+				"CharacterAutoLoads": false
+			}
+		},
+
+		"ServerScriptService": {
+			"$className": "ServerScriptService",
+			"$path": "src/Server"
+		},
+
+		"StarterPlayer": {
+			"$className": "StarterPlayer",
+			"StarterPlayerScripts": {
+				"$className": "StarterPlayerScripts",
+				"$path": "src/Client"
+			}
+		},
+
+		"Workspace": {
+			"$properties": {
+				"FilteringEnabled": true
+			}
+		},
+		"Lighting": {
+			"$properties": {
+				"Ambient": [
+					0,
+					0,
+					0
+				],
+				"Brightness": 2,
+				"GlobalShadows": true,
+				"Outlines": false,
+				"Technology": "Voxel"
+			}
+		},
+		"SoundService": {
+			"$properties": {
+				"RespectFilteringEnabled": true
+			}
+		}
+	}
+}
