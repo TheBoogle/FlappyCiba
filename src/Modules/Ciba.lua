@@ -25,7 +25,7 @@ function Ciba.new()
 	}
 
 	self.CastParams.FilterType = Enum.RaycastFilterType.Blacklist
-	self.CastParams.FilterDescendantsInstances = {self.Model, RayFolder}
+	self.CastParams.FilterDescendantsInstances = {self.Model}
 
 	setmetatable(self, Ciba)
 
