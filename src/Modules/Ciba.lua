@@ -54,10 +54,12 @@ function Ciba:Collide()
 end
 
 function Ciba:Jump()
-	if self.Position.Y > 35 then return end
+	if self.Position.Y > 35 then return false end
 	
 	self.ApplyGravity = true
 	self.Velocity = Vector2.new(0, 25)
+	
+	return true
 end
 
 function Ciba:Update(DeltaTime: number)

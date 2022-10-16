@@ -69,8 +69,9 @@ end
 
 ContextActionService:BindAction("Jump", function(_, State)
 	if State == Enum.UserInputState.Begin then
-		PlaySfx("wing")
-		Ciba:Jump()
+		if Ciba:Jump() then
+			PlaySfx("wing")
+		end
 	end
 end, false, Enum.KeyCode.Space, Enum.UserInputType.MouseButton1, Enum.UserInputType.Touch)
 
