@@ -12,29 +12,6 @@ local CollideDirections = {
 }
 local CollideDistance = 2
 
-local RayFolder = Instance.new("Folder")
-RayFolder.Name = "Rays"
-RayFolder.Parent = workspace
-
-local function VisualizeRaycast(Ray: Ray, RaycastResult: RaycastResult)
-	local Distance = RaycastResult and RaycastResult.Distance or Ray.Direction.Magnitude
-
-	local RayPart = Instance.new("Part")
-	RayPart.Anchored = true
-	RayPart.CanCollide = false
-	RayPart.CanTouch = false
-	RayPart.CanQuery = false
-	RayPart.CFrame = CFrame.lookAt(Ray.Origin, Ray.Origin + Ray.Direction) * CFrame.new(0, 0, -Distance / 2)
-	RayPart.Size = Vector3.new(0.50, 0.50, Distance)
-	RayPart.Parent = RayFolder
-
-	if RaycastResult then
-		RayPart.BrickColor = BrickColor.new("Bright red")
-	else
-		RayPart.BrickColor = BrickColor.new("Bright green")
-	end
-end
-
 function Ciba.new()
 	local self = {
 		Position = Vector2.new(0, 0),
@@ -86,7 +63,6 @@ end
 function Ciba:Update(DeltaTime: number)
 	if self.Dead then return end
 
-	RayFolder:ClearAllChildren()
 	if self:Collide() then self.Dead = true return end
 
 	DeltaTime = DeltaTime or 1 / 60
